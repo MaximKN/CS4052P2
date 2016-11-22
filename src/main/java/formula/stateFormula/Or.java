@@ -11,7 +11,9 @@ public class Or extends StateFormula {
         this.right = right;
     }
 
-    public boolean check(Model model){}
+    public boolean check(Model model){
+        return false;
+    }
 
     @Override
     public void writeToBuffer(StringBuilder buffer) {

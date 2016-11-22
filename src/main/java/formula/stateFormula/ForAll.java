@@ -27,9 +27,7 @@ public class ForAll extends StateFormula {
     public boolean check (Model model) { 
 
         if( this.pathFormula instanceof Always){
-
             return this.pathFormula.check(model); 
-
         }
         else if( this.pathFormula instanceof Eventually){
 
@@ -41,8 +39,8 @@ public class ForAll extends StateFormula {
             
         }
         else{
-
         }
 
+        return false; 
     }
 }

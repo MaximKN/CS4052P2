@@ -9,11 +9,18 @@ public class AtomicProp extends StateFormula {
         this.label = label;
     }
 
-    public boolean check(Model model){}
+    public boolean check(Model model){
+        return true;
+    }
+
+
+    public String getLabel(){
+        return this.label;
+    }
 
     @Override
     public void writeToBuffer(StringBuilder buffer) {
-        buffer.append(" " + label + " ");
+        buffer.append(label + " ");
     }
 
 }

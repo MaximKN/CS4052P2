@@ -12,7 +12,7 @@ public class And extends StateFormula {
     }
 
     public boolean check(Model model){
-    
+        return false; 
     }
 
     @Override

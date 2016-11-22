@@ -10,7 +10,9 @@ public class Not extends StateFormula {
         this.stateFormula = stateFormula;
     }
 
-    public boolean check(Model model){}
+    public boolean check(Model model){
+        return false;
+    }
 
     @Override
     public void writeToBuffer(StringBuilder buffer) {

@@ -33,6 +33,7 @@ public class Always extends PathFormula {
     public boolean check(Model model){ 
 
         if (this.stateFormula instanceof AtomicProp){
+            AtomicProp a = (AtomicProp) this.stateFormula;
             State[] allStates = model.getStates(); 
 
             for(State s : allStates){
@@ -40,8 +41,8 @@ public class Always extends PathFormula {
                 String[] labels = s.getLabel();
                 boolean contains = false;
 
-                for(String l : labels){ 
-                    if(l.equals(this.stateFormula.label)){
+                for(String l : labels){
+                    if(l.equals(a.label)){
                         contains = true; 
                     }
                 }
@@ -53,7 +54,8 @@ public class Always extends PathFormula {
             }
             return true; 
         }
-
+        
+        return false;
 
     }
 

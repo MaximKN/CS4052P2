@@ -39,8 +39,7 @@ public class SimpleModelChecker implements ModelChecker {
             //call ThereExists check 
         }
 
-
-        
+        return false;        
     }
 
     //return all paths 

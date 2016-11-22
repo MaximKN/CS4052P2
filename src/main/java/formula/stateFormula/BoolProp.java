@@ -9,7 +9,9 @@ public class BoolProp extends StateFormula {
         this.value = value;
     }
 
-    public boolean check(Model model){}
+    public boolean check(Model model){
+        return false;
+    }
 
     @Override
     public void writeToBuffer(StringBuilder buffer) {
