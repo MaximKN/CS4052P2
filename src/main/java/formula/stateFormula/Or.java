@@ -1,5 +1,7 @@
 package formula.stateFormula;
 
+import model.*;
+
 public class Or extends StateFormula {
     public final StateFormula left;
     public final StateFormula right;
@@ -8,6 +10,8 @@ public class Or extends StateFormula {
         this.left = left;
         this.right = right;
     }
+
+    public boolean check(Model model){}
 
     @Override
     public void writeToBuffer(StringBuilder buffer) {

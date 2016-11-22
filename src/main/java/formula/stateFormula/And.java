@@ -1,5 +1,7 @@
 package formula.stateFormula;
 
+import model.*;
+
 public class And extends StateFormula {
     public final StateFormula left;
     public final StateFormula right;
@@ -7,6 +9,10 @@ public class And extends StateFormula {
     public And(StateFormula left, StateFormula right) {
         this.left = left;
         this.right = right;
+    }
+
+    public boolean check(Model model){
+    
     }
 
     @Override

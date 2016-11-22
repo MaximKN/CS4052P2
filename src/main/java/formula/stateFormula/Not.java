@@ -1,5 +1,6 @@
 package formula.stateFormula;
 
+import model.*;
 import formula.FormulaParser;
 
 public class Not extends StateFormula {
@@ -8,6 +9,8 @@ public class Not extends StateFormula {
     public Not(StateFormula stateFormula) {
         this.stateFormula = stateFormula;
     }
+
+    public boolean check(Model model){}
 
     @Override
     public void writeToBuffer(StringBuilder buffer) {
