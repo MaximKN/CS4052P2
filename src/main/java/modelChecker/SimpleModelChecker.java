@@ -20,19 +20,22 @@ public class SimpleModelChecker implements ModelChecker {
 
         }
         else if(query instanceof AtomicProp){
+            //call AtomicProp check
 
         }
         else if(query instanceof BoolProp){
+              //call BoolProp check 
 
         }
         else if(query instanceof Not){
+            //call Not check 
 
         }
         else if(query instanceof Or){
-
+            //call Or check 
         }
         else if(query instanceof ThereExists){
-
+            //call ThereExists check 
         }
 
 
