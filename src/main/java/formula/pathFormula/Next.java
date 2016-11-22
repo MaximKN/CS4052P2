@@ -28,13 +28,22 @@ public class Next extends PathFormula {
 
 
     //passes in an extra parameter in order to find the state we are looking at to find next state
-    public boolean check(Model model, State originalState){ 
+    public boolean check(Model model, State source){ 
 
         if (this.stateFormula instanceof AtomicProp){
-         State[] allStates = model.getStates(); 
-         for(State s : allStates){
 
+         AtomicProp a = (AtomicProp) this.stateFormula;
+   
+         Trasition[] allTrans = model.getTransitions(); 
+
+         for(Transition t : allTrans){
+            if(t.getSource().equals(source.getLabel()){
+                if(!t.getTarget().equals(a.label)){
+                    return false; 
+               }
+            }
          }
+         return true; 
 
         }
     }
