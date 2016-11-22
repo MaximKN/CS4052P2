@@ -3,6 +3,7 @@ package formula.pathFormula;
 import formula.FormulaParser;
 import formula.stateFormula.*;
 import java.util.*;
+import model.Model;
 
 public class Eventually extends PathFormula {
     public final StateFormula stateFormula;
@@ -29,6 +30,15 @@ public class Eventually extends PathFormula {
         buffer.append(FormulaParser.EVENTUALLY_TOKEN);
         stateFormula.writeToBuffer(buffer);
         ;
+    }
+
+    //********************************* New Code ***********************************
+
+
+
+    //check method for eventually 
+    public boolean check(Model model){ 
+        return false;
     }
 
 }
