@@ -4,6 +4,7 @@ package model;
  * 
  * */
 public class State {
+
     private boolean init;
     private String name;
     private String [] label;
@@ -31,5 +32,9 @@ public class State {
     public String[] getLabel() {
 	return label;
     }
+
+    //*************************** New Code ***********************
+
+    
 	
 }

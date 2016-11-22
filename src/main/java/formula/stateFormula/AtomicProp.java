@@ -3,6 +3,7 @@ package formula.stateFormula;
 import model.*;
 
 public class AtomicProp extends StateFormula {
+    
     public final String label;
 
     public AtomicProp(String label) {
@@ -24,3 +25,5 @@ public class AtomicProp extends StateFormula {
     }
 
 }
+
+

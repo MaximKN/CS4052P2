@@ -30,10 +30,12 @@ public class ForAll extends StateFormula {
             return this.pathFormula.check(model); 
         }
         else if( this.pathFormula instanceof Eventually){
-
+            
+            return this.pathFormula.check(model); 
         }
         else if( this.pathFormula instanceof Next){
-            
+          
+          return this.pathFormula.check(model);   
         }
         else if( this.pathFormula instanceof Until){
             
