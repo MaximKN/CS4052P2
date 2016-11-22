@@ -1,7 +1,12 @@
 package formula.stateFormula;
 
+import model.*;
+
 public abstract class StateFormula {
     public abstract void writeToBuffer(StringBuilder buffer);
+    
+    // Added
+    public abstract boolean check(Model model);
 
     @Override
     public String toString() {

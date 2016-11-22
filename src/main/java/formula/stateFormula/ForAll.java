@@ -1,7 +1,7 @@
 package formula.stateFormula;
 
 import formula.*;
-
+import model.*;
 import formula.pathFormula.*;
 
 public class ForAll extends StateFormula {
@@ -28,7 +28,7 @@ public class ForAll extends StateFormula {
 
         if( this.pathFormula instanceof Always){
 
-            this.pathFormula.check(model); 
+            return this.pathFormula.check(model); 
 
         }
         else if( this.pathFormula instanceof Eventually){
@@ -40,7 +40,7 @@ public class ForAll extends StateFormula {
         else if( this.pathFormula instanceof Until){
             
         }
-        Else{
+        else{
 
         }
 

@@ -3,6 +3,7 @@ package formula.pathFormula;
 import formula.FormulaParser;
 import formula.stateFormula.*;
 import java.util.*;
+import model.*;
 
 public class Always extends PathFormula {
     public final StateFormula stateFormula;
