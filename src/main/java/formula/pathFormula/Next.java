@@ -25,9 +25,18 @@ public class Next extends PathFormula {
         ;
     }
     //********************************* New Code ****************************
-    
-    public boolean check(Model model){ 
-        return false;
+
+
+    //passes in an extra parameter in order to find the state we are looking at to find next state
+    public boolean check(Model model, State originalState){ 
+
+        if (this.stateFormula instanceof AtomicProp){
+         State[] allStates = model.getStates(); 
+         for(State s : allStates){
+
+         }
+
+        }
     }
 
 }

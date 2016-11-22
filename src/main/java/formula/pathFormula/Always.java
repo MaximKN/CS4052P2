@@ -47,7 +47,7 @@ public class Always extends PathFormula {
                     }
                 }
 
-                if( !contains){
+                if(!contains){
                     return false;
                 }
 
