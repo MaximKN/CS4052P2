@@ -119,10 +119,10 @@ public class FormulaParser {
         case THEREEXISTS_TOKEN:
             return new ThereExists(parsePathFormula());
         case TRUE_TOKEN_PREFIX:
-            validateNextChars("RUE".toCharArray());
+            validateNextChars("TRUE".toCharArray());
             return new BoolProp(true);
         case FALSE_TOKEN_PREFIX:
-            validateNextChars("ALSE".toCharArray());
+            validateNextChars("FALSE".toCharArray());
             return new BoolProp(false);
         default:
             if (isLowerCase(nextChar)) {

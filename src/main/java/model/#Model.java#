@@ -12,7 +12,7 @@ public class Model {
     State[] states;
     Transition[] transitions;
 
-    public static Model parseModel(String filePath) throws IOException {
+    public static Model parseModel(String filePath) throws IOException 11{
         Gson gson = new Gson();
         Model model = gson.fromJson(new FileReader(filePath), Model.class);
         for (Transition t : model.transitions) {

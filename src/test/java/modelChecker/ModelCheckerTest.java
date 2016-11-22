@@ -20,6 +20,7 @@ public class ModelCheckerTest {
      * constraint1.json and ctl.json are just examples, you need to add new
      * models and formulas for the mutual exclusion task.
      */
+    /*
     @Test
     public void buildAndCheckModel() {
         try {
@@ -36,6 +37,21 @@ public class ModelCheckerTest {
             e.printStackTrace();
             fail(e.toString());
         }
-    }
+    }*/
 
+    @Test
+    public void checkSimpleModel1() {
+        try {
+            Model model = Model.parseModel("src/test/resources/simpleModel1.json");
+            StateFormula query = new FormulaParser("src/test/resources/simpleCTL1.json").parse();
+
+            ModelChecker mc = new SimpleModelChecker();
+
+            assertTrue(mc.check(model, null, query));
+        } catch (IOException e) {
+            e.printStackTrace();
+            fail(e.toString());
+        }
+
+    }
 }

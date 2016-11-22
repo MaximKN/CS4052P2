@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="modelChecker.ModelCheckerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2016-11-22T13:47:39" hostname="pc5-003-l.cs.st-andrews.ac.uk" time="0.162">
+  <properties/>
+  <testcase name="checkSimpleModel1" classname="modelChecker.ModelCheckerTest" time="0.162"/>
+  <system-out><![CDATA[s0-[act1]-s1
+s0-[act2]-s2
+s1-[act3]-s0
+s2-[act4]-s1
+s1-[act5]-s3
+s3-[act6]-s3
+model.Model@383bd6e
+(AG a )
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
