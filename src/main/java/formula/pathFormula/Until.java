@@ -3,6 +3,7 @@ package formula.pathFormula;
 import formula.*;
 import formula.stateFormula.*;
 import java.util.Set;
+import model.Model;
 
 public class Until extends PathFormula {
     public final StateFormula left;
@@ -34,5 +35,12 @@ public class Until extends PathFormula {
         right.writeToBuffer(buffer);
         buffer.append(")");
     }
+
+    //**************************** New Code ************************
+
+    public boolean check(Model model){ 
+        return false;
+    }
+
 
 }
