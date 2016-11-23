@@ -53,17 +53,17 @@ public class Until extends PathFormula {
                     break; 
                  }
             }
-            //checks the initial state and if it contains the correct path 
-            String[] labels = initial.getLabels)();
-            boolean contains = false; 
-            for(String l : labels){
-                if(l.equals(a.label)){
-                    contains = true; 
-                }
-            }
-            if(!contains){
-                return false; 
-            }
+            // //checks the initial state and if it contains the correct path 
+            // String[] rootLabels = initial.getLabels)();
+            // boolean contains = false; 
+            // for(String l : rootLabels){
+            //     if(l.equals(a.label)){
+            //         contains = true; 
+            //     }
+            // }
+            // if(!contains){
+            //     return false; 
+            // }
 
              //checks the next states to see if they contain correct paths 
              Trasition[] allTrans = model.getTransitions(); 
@@ -79,6 +79,17 @@ public class Until extends PathFormula {
                         neighbors.add(t.getTarget);
                      }
                  }
+
+                String[] nodeLabels = neighbors.get(0).getLabels();
+                boolean contains = false; 
+                for(String l : labels){
+                    if(l.equals(a.label)){
+                        contains = true; 
+                    }
+                }
+                if(!contains){
+                    return false; 
+                }
                 //remove state and continue to next state
                 neighbors.remove(0);
 
