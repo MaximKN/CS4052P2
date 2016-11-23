@@ -50,18 +50,6 @@ public class Until extends PathFormula {
                     break; 
                  }
             }
-            // //checks the initial state and if it contains the correct path 
-            // String[] rootLabels = initial.getLabels)();
-            // boolean contains = false; 
-            // for(String l : rootLabels){
-            //     if(l.equals(a.label)){
-            //         contains = true; 
-            //     }
-            // }
-            // if(!contains){
-            //     return false; 
-            // }
-
              //checks the next states to see if they contain correct paths 
              Transition[] allTrans = model.getTransitions(); 
              ArrayList<State> neighbors = new ArrayList<State>();

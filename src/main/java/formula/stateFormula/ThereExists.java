@@ -22,4 +22,25 @@ public class ThereExists extends StateFormula {
         pathFormula.writeToBuffer(buffer);
         buffer.append(")");
     }
+//************************** New Code **************************
+    public boolean check (Model model) { 
+    
+        if( this.pathFormula instanceof Always){
+
+    
+        }
+        else if( this.pathFormula instanceof Eventually){
+          
+        }
+        else if( this.pathFormula instanceof Next){ 
+        
+   
+        }
+        else if( this.pathFormula instanceof Until){
+
+        }
+        else{
+            return false; 
+        }
+    }
 }

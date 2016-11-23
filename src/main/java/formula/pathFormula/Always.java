@@ -25,8 +25,6 @@ public class Always extends PathFormula {
         ;
 
     }
-
-
     //********************************* New Code ********************************
 
     //check method always 
