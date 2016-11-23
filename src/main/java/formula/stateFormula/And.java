@@ -28,24 +28,30 @@ public class And extends StateFormula {
     //************************************* New Code ******************************
 
     public boolean check (Model model) { 
-    
-        if( this.pathFormula instanceof Always){
 
+        if( this.left instanceof AtomicProp && this.right instanceof AtomicProp ||
+            this.left instanceof ForAll && this.right instanceof ForAll||
+            this.left instanceof ThereExist && this.right instanceof ThereExist ||
+            this.left instanceof Not && this.right instanceof Not){
+
+            if (this.left.check(model) && this.right.check(model)){
+                return true;
+            } else {
+                return false;
+            }
     
         }
-        else if( this.pathFormula instanceof Eventually){
-          
-        }
-        else if( this.pathFormula instanceof Next){ 
-        
-   
-        }
-        else if( this.pathFormula instanceof Until){
-
+        else if (this.left instanceof BoolProp && this.right instanceof BoolProp ){
+         if (this.left.value && this.right.value){
+                return true;
+            } else {
+                return false;
+            }
         }
         else{
             return false; 
         }
-    }
+    
+   }
 
 }

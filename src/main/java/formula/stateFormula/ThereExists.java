@@ -24,10 +24,8 @@ public class ThereExists extends StateFormula {
     }
 
     public boolean check (Model model) { 
-        if(this.pathFormula instanceof Always){
-            return this.pathFormula.check(model); 
-        }
-        else if(this.pathFormula instanceof Eventually){
+     
+        else if(this.pathFormula instanceof Always || this.pathFormula instanceof Eventually ||this.pathFormula instanceof Next){
             State[] states = model.getStates();
 
             for (State s : states){
@@ -38,14 +36,12 @@ public class ThereExists extends StateFormula {
 
             return false;
         }
-        else if(this.pathFormula instanceof Next){ 
-            return this.pathFormula.check(model);   
-        }
         else if(this.pathFormula instanceof Until){
-            return this.pathFormula.check(model); 
+            State[] allStates = model.getStates(); 
+            return this.pathFormula.check(model, allStates.get(0)); 
         }
         else{
+         return false; 
         }
-        return false;      
     }
 }
