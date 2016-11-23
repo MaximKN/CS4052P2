@@ -23,10 +23,6 @@ public class ThereExists extends StateFormula {
         buffer.append(")");
     }
 
-    public boolean check(Model model){
-        
-    }
-
     public boolean check (Model model) { 
         if(this.pathFormula instanceof Always){
             return this.pathFormula.check(model); 
@@ -52,5 +48,4 @@ public class ThereExists extends StateFormula {
         }
         return false;      
     }
-
 }

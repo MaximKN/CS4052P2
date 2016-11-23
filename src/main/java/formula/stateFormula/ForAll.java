@@ -25,6 +25,7 @@ public class ForAll extends StateFormula {
 
     //check method to see if for all quantifier exists 
     public boolean check (Model model) { 
+<<<<<<< HEAD
         if(this.pathFormula instanceof Always){
             return this.pathFormula.check(model); 
         }
@@ -36,10 +37,30 @@ public class ForAll extends StateFormula {
         }
         else if(this.pathFormula instanceof Until){
             return this.pathFormula.check(model); 
+=======
+
+        if( this.pathFormula instanceof Always || this.pathFormula instanceof Eventually || this.pathFormula instanceof Next){
+
+            boolean contains = true;
+            //get all of the states within the model 
+            State[] allStates = model.getStates(); 
+            //traverse all the states and make sure all states always contain 
+            for(State s : allStates){
+
+                if(!this.pathFormula.check(model,s)){
+                    contains = false; 
+                }
+
+            }
+            return contains;
+        }
+        else if( this.pathFormula instanceof Until){
+            State[] allStates = model.getStates(); 
+            return this.pathFormula.check(model, allStates.get(0)); 
+>>>>>>> 8f39788c26875c364cb0d39032b1ebe925193f3c
         }
         else{
+         return false; 
         }
-
-        return false; 
     }
 }
