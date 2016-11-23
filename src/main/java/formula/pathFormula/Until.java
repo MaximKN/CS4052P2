@@ -39,63 +39,41 @@ public class Until extends PathFormula {
 
     //**************************** New Code ************************
 
-    public boolean check(Model model){ 
-            AtomicProp a = (AtomicProp) this.left;
-            State[] allStates = model.getStates(); 
-            State initial = null; 
+    public boolean check(Model model, State s){ 
+        AtomicProp a = (AtomicProp) this.left;
 
-            for(State s : allStates){
-                if(s.isInit()){
-                    initial = s; 
-                    break; 
-                 }
-            }
-            // //checks the initial state and if it contains the correct path 
-            // String[] rootLabels = initial.getLabels)();
-            // boolean contains = false; 
-            // for(String l : rootLabels){
-            //     if(l.equals(a.label)){
-            //         contains = true; 
-            //     }
-            // }
-            // if(!contains){
-            //     return false; 
-            // }
+        //checks the next states to see if they contain correct paths 
+        Transition[] allTrans = model.getTransitions(); 
+        ArrayList<State> neighbors = new ArrayList<State>();
+        neighbors.add(initial);
+        boolean contains = false; 
 
-             //checks the next states to see if they contain correct paths 
-             Transition[] allTrans = model.getTransitions(); 
-             ArrayList<State> neighbors = new ArrayList<State>();
-             neighbors.add(initial);
-             boolean contains = false; 
-
-             // BFS breadth first search implemenation 
-            while(!neighbors.isEmpty()){
-                for(Transition t : allTrans){
-                    if(t.getSource().equals(neighbors.get(0).getLabel())){
-                        for(State s : allStates){
-                            if(s.getName().equals(t.getTarget())){
-                                neighbors.add(s);
-                            }
-                        }
-                     }
-                }
-
-                String[] nodeLabels = neighbors.get(0).getLabel();
-                for(String l : nodeLabels){
-                    if(l.equals(a.label)){
-                        contains = true; 
+         // BFS breadth first search implemenation 
+        while(!neighbors.isEmpty()){
+            for(Transition t : allTrans){
+                if(t.getSource().equals(neighbors.get(0).getLabel())){
+                    if(s.getName().equals(t.getTarget())){
+                        neighbors.add(s);
                     }
                 }
-                if(!contains){
-                    return false; 
-                }
-                //remove state and continue to next state
-                neighbors.remove(0);
-
-                //now check the next states to see if they contain correct labels
-                //change while to until
             }
-            return contains; 
+
+            String[] nodeLabels = neighbors.get(0).getLabel();
+            for(String l : nodeLabels){
+                if(l.equals(a.label)){
+                    contains = true; 
+                }
+            }
+            if(!contains){
+                return false; 
+            }
+            //remove state and continue to next state
+            neighbors.remove(0);
+
+            //now check the next states to see if they contain correct labels
+            //change while to until
         }
+        return contains; 
+    }
     
 }

@@ -25,16 +25,16 @@ public class ForAll extends StateFormula {
 
     //check method to see if for all quantifier exists 
     public boolean check (Model model) { 
-        if( this.pathFormula instanceof Always){
+        if(this.pathFormula instanceof Always){
             return this.pathFormula.check(model); 
         }
-        else if( this.pathFormula instanceof Eventually){
+        else if(this.pathFormula instanceof Eventually){
             return this.pathFormula.check(model); 
         }
-        else if( this.pathFormula instanceof Next){ 
+        else if(this.pathFormula instanceof Next){ 
             return this.pathFormula.check(model);   
         }
-        else if( this.pathFormula instanceof Until){
+        else if(this.pathFormula instanceof Until){
             return this.pathFormula.check(model); 
         }
         else{

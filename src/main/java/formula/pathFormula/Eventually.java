@@ -37,19 +37,15 @@ public class Eventually extends PathFormula {
 
 
     //check method for eventually 
-    public boolean check(Model model){ 
+    public boolean check(Model model, State s){ 
         
         if (this.stateFormula instanceof AtomicProp){
             AtomicProp a = (AtomicProp) this.stateFormula;
-            State[] allStates = model.getStates(); 
+            String[] labels = s.getLabel();
 
-            for(State s : allStates){
-                String[] labels = s.getLabel();
-
-                for(String l : labels){ 
-                    if(l.equals(a.label)){
-                        return true; 
-                    }
+            for(String l : labels){ 
+                if(l.equals(a.label)){
+                    return true; 
                 }
             }
         } 
