@@ -40,11 +40,10 @@ public class ModelCheckerTest {
     }*/
 
     @Test
-    public void checkSimpleModel1() {
+    public void checkForAllAlways() {
         try {
             Model model = Model.parseModel("src/test/resources/simpleModel1.json");
-            StateFormula query = new FormulaParser("src/test/resources/simpleCTL1.json").parse();
-
+            StateFormula query = new FormulaParser("src/test/resources/ctlForAllAlways.json").parse();
             ModelChecker mc = new SimpleModelChecker();
 
             assertTrue(mc.check(model, null, query));
@@ -54,4 +53,62 @@ public class ModelCheckerTest {
         }
 
     }
+
+    @Test
+    public void checkForAllEventially() {
+        try {
+            Model model = Model.parseModel("src/test/resources/simpleModel1.json");
+            StateFormula query = new FormulaParser("src/test/resources/ctlForAllEventially.json").parse();
+            ModelChecker mc = new SimpleModelChecker();
+
+            assertTrue(mc.check(model, null, query));
+        } catch (IOException e) {
+            e.printStackTrace();
+            fail(e.toString());
+        }
+    }
+
+    @Test
+    public void checkNext() {
+        try {
+            Model model = Model.parseModel("src/test/resources/simpleModel1.json");
+            StateFormula query = new FormulaParser("src/test/resources/ctlNext.json").parse();
+            ModelChecker mc = new SimpleModelChecker();
+
+            assertTrue(mc.check(model, null, query));
+        } catch (IOException e) {
+            e.printStackTrace();
+            fail(e.toString());
+        }
+    }
+
+    @Test
+    public void checkUntil() {
+        try {
+            Model model = Model.parseModel("src/test/resources/simpleModel1.json");
+            StateFormula query = new FormulaParser("src/test/resources/ctlUntil.json").parse();
+            ModelChecker mc = new SimpleModelChecker();
+
+            assertTrue(mc.check(model, null, query));
+        } catch (IOException e) {
+            e.printStackTrace();
+            fail(e.toString());
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

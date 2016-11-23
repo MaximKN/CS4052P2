@@ -3,7 +3,8 @@ package formula.pathFormula;
 import formula.*;
 import formula.stateFormula.*;
 import java.util.Set;
-import model.Model;
+import model.*;
+import java.util.*;
 
 public class Until extends PathFormula {
     public final StateFormula left;
@@ -39,16 +40,12 @@ public class Until extends PathFormula {
     //**************************** New Code ************************
 
     public boolean check(Model model){ 
-
-         if (this.stateFormula instanceof AtomicProp){
-            AtomicProp a = (AtomicProp) this.stateFormula;
+            AtomicProp a = (AtomicProp) this.left;
             State[] allStates = model.getStates(); 
             State initial = null; 
 
             for(State s : allStates){
-
-                if(s.isInit){
-
+                if(s.isInit()){
                     initial = s; 
                     break; 
                  }
@@ -66,23 +63,25 @@ public class Until extends PathFormula {
             // }
 
              //checks the next states to see if they contain correct paths 
-             Trasition[] allTrans = model.getTransitions(); 
-             ArrayList<State> neighbors = new ArrayList<state>();
+             Transition[] allTrans = model.getTransitions(); 
+             ArrayList<State> neighbors = new ArrayList<State>();
              neighbors.add(initial);
+             boolean contains = false; 
 
              // BFS breadth first search implemenation 
             while(!neighbors.isEmpty()){
-
                 for(Transition t : allTrans){
-                    if(t.getSource().equals(neighbors.get(0).getLabel()){
-                        
-                        neighbors.add(t.getTarget);
+                    if(t.getSource().equals(neighbors.get(0).getLabel())){
+                        for(State s : allStates){
+                            if(s.getName().equals(t.getTarget())){
+                                neighbors.add(s);
+                            }
+                        }
                      }
-                 }
+                }
 
-                String[] nodeLabels = neighbors.get(0).getLabels();
-                boolean contains = false; 
-                for(String l : labels){
+                String[] nodeLabels = neighbors.get(0).getLabel();
+                for(String l : nodeLabels){
                     if(l.equals(a.label)){
                         contains = true; 
                     }
@@ -95,12 +94,8 @@ public class Until extends PathFormula {
 
                 //now check the next states to see if they contain correct labels
                 //change while to until
-             }
-         return true; 
-
+            }
+            return contains; 
         }
-
-    }
-
-
+    
 }

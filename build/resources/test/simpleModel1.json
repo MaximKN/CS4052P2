@@ -8,7 +8,7 @@
 		{
 			"init": false,
 			"name": "s1", 
-			"label": ["a"]
+			"label": ["a", "b"]
 		}, 
 		{
 			"init": false,

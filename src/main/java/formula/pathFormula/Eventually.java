@@ -3,7 +3,7 @@ package formula.pathFormula;
 import formula.FormulaParser;
 import formula.stateFormula.*;
 import java.util.*;
-import model.Model;
+import model.*;
 
 public class Eventually extends PathFormula {
     public final StateFormula stateFormula;
@@ -52,8 +52,8 @@ public class Eventually extends PathFormula {
                     }
                 }
             }
-            return false; 
-        }
+        } 
+        return false;
     }
 
 }
