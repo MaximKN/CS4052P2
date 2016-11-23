@@ -11,35 +11,19 @@ public class SimpleModelChecker implements ModelChecker {
      
      //begin traversing asCTL query and first first state propostion 
      // figure out which state type it is 
-        if(query instanceof ForAll){ 
-            //call ForAll check
-            return query.check(model); 
-        }
 
-        else if(query instanceof And){
-            //call And check
+    //parse the fairness constraints and then make an intersection between asCTL and Fairness
 
-        }
-        else if(query instanceof AtomicProp){
-            //call AtomicProp check
+        if (constraint instanceof AtomicProp && query instanceof AtomicProp ||
+            constraint instanceof ForAll && query instanceof ForAll||
+            constraint instanceof ThereExist && query instanceof ThereExist ||
+            constraint instanceof Not && query instanceof Not)){
 
-        }
-        else if(query instanceof BoolProp){
-              //call BoolProp check 
+            return constraint.check(model) && query.check(model);
+            
+        } else {
 
         }
-        else if(query instanceof Not){
-            //call Not check 
-
-        }
-        else if(query instanceof Or){
-            //call Or check 
-        }
-        else if(query instanceof ThereExists){
-            //call ThereExists check 
-        }
-
-        return false;        
     }
 
     //return all paths 

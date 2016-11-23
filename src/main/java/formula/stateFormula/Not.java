@@ -22,27 +22,29 @@ public class Not extends StateFormula {
         buffer.append(")");
     }
 
-
     //************************************ New Code **************************
+
     public boolean check (Model model) { 
-    
-        if( this.pathFormula instanceof Always){
+       if(this.stateFormula instanceof ForAll || this.stateFormula instanceof ThereExists){
 
+            if (!this.stateFormula.check(model)){
+                return true;
+            } else {
+                return false;
+            }
     
         }
-        else if( this.pathFormula instanceof Eventually){
-          
-        }
-        else if( this.pathFormula instanceof Next){ 
-        
-   
-        }
-        else if( this.pathFormula instanceof Until){
+        else if (this.stateFormula instanceof BoolProp){
+           if (!this.stateFormula.value){
+                return true;
+            } else {
+                return false;
+            }
 
-        }
         else{
             return false; 
         }
+     
     }
 
 }
