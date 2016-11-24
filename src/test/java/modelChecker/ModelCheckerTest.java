@@ -22,7 +22,7 @@ public class ModelCheckerTest {
             StateFormula query = new FormulaParser("src/test/resources/ctlForAllAlways.json").parse();
             ModelChecker mc = new SimpleModelChecker();
 
-            assertTrue(mc.check(model, query, query));
+            assertFalse(mc.check(model, query, query));
         } catch (IOException e) {
             e.printStackTrace();
             fail(e.toString());
@@ -31,7 +31,7 @@ public class ModelCheckerTest {
     }
 
     @Test
-    public void checkForAllEventially() {
+    public void checkForAllEventually() {
         try {
             Model model = Model.parseModel("src/test/resources/simpleModel1.json");
             StateFormula query = new FormulaParser("src/test/resources/ctlForAllEventially.json").parse();
@@ -96,7 +96,7 @@ public class ModelCheckerTest {
 
             ModelChecker mc = new SimpleModelChecker();
 
-            assertTrue(mc.check(model, constrain, query));
+            assertFalse(mc.check(model, constrain, query));
         } catch (IOException e) {
             e.printStackTrace();
             fail(e.toString());
@@ -105,14 +105,14 @@ public class ModelCheckerTest {
     }
 
     @Test
-    public void checkForAllEventiallyConstrain() {
+    public void checkForAllEventuallyConstrain() {
         try {
             Model model = Model.parseModel("src/test/resources/simpleModel1.json");
             StateFormula query = new FormulaParser("src/test/resources/ctlForAllEventially.json").parse();
             ModelChecker mc = new SimpleModelChecker();
             StateFormula constrain = new FormulaParser("src/test/resources/constraint1.json").parse();
 
-            assertTrue(mc.check(model, constrain, query));
+            assertFalse(mc.check(model, constrain, query));
         } catch (IOException e) {
             e.printStackTrace();
             fail(e.toString());
@@ -127,7 +127,7 @@ public class ModelCheckerTest {
             ModelChecker mc = new SimpleModelChecker();
             StateFormula constrain = new FormulaParser("src/test/resources/constraint1.json").parse();
 
-            assertTrue(mc.check(model, constrain, query));
+            assertFalse(mc.check(model, constrain, query));
         } catch (IOException e) {
             e.printStackTrace();
             fail(e.toString());
@@ -142,7 +142,7 @@ public class ModelCheckerTest {
             ModelChecker mc = new SimpleModelChecker();
             StateFormula constrain = new FormulaParser("src/test/resources/constraint1.json").parse();
 
-            assertTrue(mc.check(model, constrain, query));
+            assertFalse(mc.check(model, constrain, query));
         } catch (IOException e) {
             e.printStackTrace();
             fail(e.toString());
@@ -171,18 +171,8 @@ public class ModelCheckerTest {
             StateFormula constrain = new FormulaParser("src/test/resources/constraint1.json").parse();
             StateFormula query = new FormulaParser("src/test/resources/ctlThereExists.json").parse();
             ModelChecker mc = new SimpleModelChecker();
-            assertFalse(mc.check(model, constrain, query));
-            String[] path = mc.getTrace();
-            String[] expectedPath = new String[4];
-            expectedPath[0] = "(AGa )";
-            expectedPath[1] = "true";
-            expectedPath[2] = "(EGa )";
-            expectedPath[3] = "true";
+            assertTrue(mc.check(model, constrain, query));
 
-            assertArrayEquals(expectedPath, path);
-            for (String s : path){
-                System.out.println(s);
-            }
         } catch (IOException e) {
             e.printStackTrace();
             fail(e.toString());
