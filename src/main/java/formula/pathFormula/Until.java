@@ -20,6 +20,10 @@ public class Until extends PathFormula {
         this.rightActions = rightActions;
     }
 
+    public boolean check(Model model){
+        return true;
+    }
+
     public Set<String> getLeftActions() {
         return leftActions;
     }
@@ -45,7 +49,7 @@ public class Until extends PathFormula {
         //checks the next states to see if they contain correct paths 
         Transition[] allTrans = model.getTransitions(); 
         ArrayList<State> neighbors = new ArrayList<State>();
-        neighbors.add(initial);
+        neighbors.add(s);
         boolean contains = false; 
 
          // BFS breadth first search implemenation 
@@ -74,6 +78,5 @@ public class Until extends PathFormula {
             //change while to until
         }
         return contains; 
-    }
-    
+    }    
 }

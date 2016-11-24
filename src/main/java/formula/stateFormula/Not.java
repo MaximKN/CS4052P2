@@ -10,7 +10,7 @@ public class Not extends StateFormula {
         this.stateFormula = stateFormula;
     }
 
-    public boolean check(Model model){
+    public boolean check(Model model, State s){
         return false;
     }
 
@@ -34,13 +34,6 @@ public class Not extends StateFormula {
             }
     
         }
-        else if (this.stateFormula instanceof BoolProp){
-           if (!this.stateFormula.value){
-                return true;
-            } else {
-                return false;
-            }
-
         else{
             return false; 
         }

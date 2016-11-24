@@ -8,6 +8,7 @@ public abstract class StateFormula {
     
     // Added
     public abstract boolean check(Model model);
+    public abstract boolean check(Model model, State s);
 
     @Override
     public String toString() {

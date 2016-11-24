@@ -16,21 +16,16 @@ public class SimpleModelChecker implements ModelChecker {
 
         if (constraint instanceof AtomicProp && query instanceof AtomicProp ||
             constraint instanceof ForAll && query instanceof ForAll||
-            constraint instanceof ThereExist && query instanceof ThereExist ||
-            constraint instanceof Not && query instanceof Not)){
-
+            constraint instanceof ThereExists && query instanceof ThereExists ||
+            constraint instanceof Not && query instanceof Not){
             return constraint.check(model) && query.check(model);
-            
-        } else {
-
         }
+        return false;
     }
 
     //return all paths 
     @Override
     public String[] getTrace() {
-       
         return null;
     }
-
 }

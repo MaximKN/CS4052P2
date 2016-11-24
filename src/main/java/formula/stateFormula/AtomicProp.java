@@ -14,6 +14,9 @@ public class AtomicProp extends StateFormula {
         return true;
     }
 
+    public boolean check(Model model, State s){
+        return true;
+    }
 
     public String getLabel(){
         return this.label;

@@ -18,6 +18,10 @@ public class Next extends PathFormula {
         return actions;
     }
 
+    public boolean check(Model model){
+        return true;
+    }
+
     @Override
     public void writeToBuffer(StringBuilder buffer) {
         buffer.append(FormulaParser.NEXT_TOKEN);

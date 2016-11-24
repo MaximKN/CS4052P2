@@ -1,7 +1,7 @@
 package formula.stateFormula;
 
 import formula.FormulaParser;
-import formula.pathFormula.PathFormula;
+import formula.pathFormula.*;
 import model.*;
 
 public class ThereExists extends StateFormula {
@@ -11,7 +11,7 @@ public class ThereExists extends StateFormula {
         this.pathFormula = pathFormula;
     }
 
-    public boolean check(Model model){
+    public boolean check(Model model, State s){
         return false;
     }
 
@@ -24,12 +24,11 @@ public class ThereExists extends StateFormula {
     }
 
     public boolean check (Model model) { 
-     
-        else if(this.pathFormula instanceof Always || this.pathFormula instanceof Eventually ||this.pathFormula instanceof Next){
+        if(this.pathFormula instanceof Always || this.pathFormula instanceof Eventually || this.pathFormula instanceof Next){
             State[] states = model.getStates();
 
             for (State s : states){
-                if (this.pathFormula.check(model){
+                if (this.pathFormula.check(model)){
                     return true;
                 } 
             }
@@ -38,10 +37,10 @@ public class ThereExists extends StateFormula {
         }
         else if(this.pathFormula instanceof Until){
             State[] allStates = model.getStates(); 
-            return this.pathFormula.check(model, allStates.get(0)); 
+            return this.pathFormula.check(model, allStates[0]); 
         }
         else{
-         return false; 
+            return false; 
         }
     }
 }

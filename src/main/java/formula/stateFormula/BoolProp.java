@@ -10,7 +10,11 @@ public class BoolProp extends StateFormula {
     }
 
     public boolean check(Model model){
-        return false;
+        return true;
+    }
+
+    public boolean check(Model model, State s){
+        return true;
     }
 
     @Override

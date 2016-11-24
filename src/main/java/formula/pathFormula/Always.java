@@ -14,6 +14,10 @@ public class Always extends PathFormula {
         this.actions = actions;
     }
 
+    public boolean check(Model model){
+        return true;
+    }
+
     public Set<String> getActions() {
         return actions;
     }

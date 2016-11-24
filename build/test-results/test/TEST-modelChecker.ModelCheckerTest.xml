@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="modelChecker.ModelCheckerTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2016-11-23T17:31:50" hostname="pc5-007-l.cs.st-andrews.ac.uk" time="0.141">
+<testsuite name="modelChecker.ModelCheckerTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2016-11-24T14:17:39" hostname="pc3-020-l.cs.st-andrews.ac.uk" time="0.107">
   <properties/>
-  <testcase name="checkUntil" classname="modelChecker.ModelCheckerTest" time="0.104"/>
-  <testcase name="checkForAllAlways" classname="modelChecker.ModelCheckerTest" time="0.019"/>
-  <testcase name="checkNext" classname="modelChecker.ModelCheckerTest" time="0.007"/>
-  <testcase name="checkForAllEventially" classname="modelChecker.ModelCheckerTest" time="0.007"/>
+  <testcase name="checkUntil" classname="modelChecker.ModelCheckerTest" time="0.093"/>
+  <testcase name="checkForAllAlways" classname="modelChecker.ModelCheckerTest" time="0.006"/>
+  <testcase name="checkNext" classname="modelChecker.ModelCheckerTest" time="0.004"/>
+  <testcase name="checkForAllEventially" classname="modelChecker.ModelCheckerTest" time="0.004"/>
   <system-out><![CDATA[s0-[act1]-s1
 s0-[act2]-s2
 s1-[act3]-s0

@@ -12,6 +12,10 @@ public class ForAll extends StateFormula {
         this.pathFormula = pathFormula;
     }
 
+    public boolean check(Model model, State s){
+        return true;
+    }
+
     @Override
     public void writeToBuffer(StringBuilder buffer) {
 

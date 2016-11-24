@@ -25,6 +25,10 @@ public class Eventually extends PathFormula {
         return rightActions;
     }
 
+    public boolean check(Model model){
+        return true;
+    }
+
     @Override
     public void writeToBuffer(StringBuilder buffer) {
         buffer.append(FormulaParser.EVENTUALLY_TOKEN);

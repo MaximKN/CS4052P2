@@ -11,7 +11,7 @@ public class Or extends StateFormula {
         this.right = right;
     }
 
-    public boolean check(Model model){
+    public boolean check(Model model, State s){
         return false;
     }
 
@@ -30,7 +30,7 @@ public class Or extends StateFormula {
     
         if( this.left instanceof AtomicProp && this.right instanceof AtomicProp ||
             this.left instanceof ForAll && this.right instanceof ForAll||
-            this.left instanceof ThereExist && this.right instanceof ThereExist ||
+            this.left instanceof ThereExists && this.right instanceof ThereExists ||
             this.left instanceof Not && this.right instanceof Not){
 
             if (!this.left.check(model) || !this.right.check(model)){
@@ -39,13 +39,6 @@ public class Or extends StateFormula {
                 return true;
             }
     
-        }
-        else if (this.left instanceof BoolProp && this.right instanceof BoolProp ){
-         if (!this.left.value || !this.right.value){
-                return false;
-            } else {
-                return true;
-            }
         }
         else{
             return false; 
