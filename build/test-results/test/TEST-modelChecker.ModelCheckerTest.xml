@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="modelChecker.ModelCheckerTest" tests="11" skipped="0" failures="0" errors="0" timestamp="2016-11-24T18:11:31" hostname="pc3-065-l.cs.st-andrews.ac.uk" time="0.144">
+<testsuite name="modelChecker.ModelCheckerTest" tests="11" skipped="0" failures="0" errors="0" timestamp="2016-11-24T18:16:28" hostname="pc3-065-l.cs.st-andrews.ac.uk" time="0.147">
   <properties/>
-  <testcase name="checkThereExists" classname="modelChecker.ModelCheckerTest" time="0.102"/>
+  <testcase name="checkThereExists" classname="modelChecker.ModelCheckerTest" time="0.09"/>
   <testcase name="checkForAllEventuallyConstrain" classname="modelChecker.ModelCheckerTest" time="0.005"/>
-  <testcase name="checkForAllAlwaysConstrain" classname="modelChecker.ModelCheckerTest" time="0.004"/>
-  <testcase name="checkUntil" classname="modelChecker.ModelCheckerTest" time="0.003"/>
-  <testcase name="checkForAllAlways" classname="modelChecker.ModelCheckerTest" time="0.003"/>
-  <testcase name="checkGetTrace" classname="modelChecker.ModelCheckerTest" time="0.003"/>
+  <testcase name="checkForAllAlwaysConstrain" classname="modelChecker.ModelCheckerTest" time="0.006"/>
+  <testcase name="checkUntil" classname="modelChecker.ModelCheckerTest" time="0.004"/>
+  <testcase name="checkForAllAlways" classname="modelChecker.ModelCheckerTest" time="0.004"/>
+  <testcase name="checkGetTrace" classname="modelChecker.ModelCheckerTest" time="0.006"/>
   <testcase name="checkThereExistsConstrain" classname="modelChecker.ModelCheckerTest" time="0.004"/>
-  <testcase name="checkNext" classname="modelChecker.ModelCheckerTest" time="0.003"/>
-  <testcase name="checkForAllEventually" classname="modelChecker.ModelCheckerTest" time="0.003"/>
-  <testcase name="checkUntilConstrain" classname="modelChecker.ModelCheckerTest" time="0.007"/>
-  <testcase name="checkNextConstrain" classname="modelChecker.ModelCheckerTest" time="0.004"/>
+  <testcase name="checkNext" classname="modelChecker.ModelCheckerTest" time="0.004"/>
+  <testcase name="checkForAllEventually" classname="modelChecker.ModelCheckerTest" time="0.005"/>
+  <testcase name="checkUntilConstrain" classname="modelChecker.ModelCheckerTest" time="0.008"/>
+  <testcase name="checkNextConstrain" classname="modelChecker.ModelCheckerTest" time="0.008"/>
   <system-out><![CDATA[s0-[act1]-s1
 s0-[act2]-s2
 s1-[act3]-s0

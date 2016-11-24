@@ -26,14 +26,14 @@ public class SimpleModelChecker implements ModelChecker {
             trace.add(String.valueOf(constraint.check(model)));
             
             if (!constraint.check(model)){
-                
+                trace.add(constraint.getTrace());    
             }
             
             trace.add(query.toString());
             trace.add(String.valueOf(query.check(model)));
             
             if (!query.check(model)){
-                 
+                trace.add(constraint.getTrace());
             }
 
             return false;
