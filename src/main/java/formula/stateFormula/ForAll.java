@@ -31,7 +31,8 @@ public class ForAll extends StateFormula {
 
     //check method to see if for all quantifier exists 
     public boolean check (Model model) { 
-        if( this.pathFormula instanceof Always || this.pathFormula instanceof Eventually || this.pathFormula instanceof Next || this.pathFormula instanceof Until){
+        if( this.pathFormula instanceof Always || this.pathFormula instanceof Eventually || 
+            this.pathFormula instanceof Next || this.pathFormula instanceof Until){
             boolean contains = true;
             //get all of the states within the model 
             State[] allStates = model.getStates(); 

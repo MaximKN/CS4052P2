@@ -23,6 +23,8 @@ public class ThereExists extends StateFormula {
         buffer.append(")");
     }
 
+    //****************************** New Code ******************************
+
     private String trace = "";
 
     public boolean check (Model model) { 
