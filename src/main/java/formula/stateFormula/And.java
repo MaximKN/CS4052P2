@@ -26,6 +26,11 @@ public class And extends StateFormula {
 
 
     //************************************* New Code ******************************
+    private String trace = "";
+
+    public String getTrace(){
+        return trace;
+    }
 
     public boolean check (Model model) { 
 
@@ -37,6 +42,11 @@ public class And extends StateFormula {
             if (this.left.check(model) && this.right.check(model)){
                 return true;
             } else {
+                if (!this.left.check(model)){
+                    trace = this.left.toString();
+                } else if (!this.right.check(model)){
+                    trace = this.right.toString();
+                }
                 return false;
             }
     
@@ -44,7 +54,6 @@ public class And extends StateFormula {
         else{
             return false; 
         }
-    
    }
 
 }

@@ -17,6 +17,10 @@ public class BoolProp extends StateFormula {
         return true;
     }
 
+    public String getTrace(){
+        return String.valueOf(value);
+    }
+
     @Override
     public void writeToBuffer(StringBuilder buffer) {
         String stringValue = (value) ? "True" : "False";

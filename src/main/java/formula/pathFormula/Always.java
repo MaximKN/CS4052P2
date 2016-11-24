@@ -43,6 +43,8 @@ public class Always extends PathFormula {
             for(String l : labels){
                 if(l.equals(a.label)){
                     contains = true; 
+                } else {
+                    return false;
                 }
             }
 

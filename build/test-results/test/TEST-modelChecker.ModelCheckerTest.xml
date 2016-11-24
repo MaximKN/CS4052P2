@@ -1,11 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="modelChecker.ModelCheckerTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2016-11-24T14:17:39" hostname="pc3-020-l.cs.st-andrews.ac.uk" time="0.107">
+<testsuite name="modelChecker.ModelCheckerTest" tests="11" skipped="0" failures="0" errors="0" timestamp="2016-11-24T16:58:20" hostname="pc3-065-l.cs.st-andrews.ac.uk" time="0.134">
   <properties/>
-  <testcase name="checkUntil" classname="modelChecker.ModelCheckerTest" time="0.093"/>
-  <testcase name="checkForAllAlways" classname="modelChecker.ModelCheckerTest" time="0.006"/>
-  <testcase name="checkNext" classname="modelChecker.ModelCheckerTest" time="0.004"/>
-  <testcase name="checkForAllEventially" classname="modelChecker.ModelCheckerTest" time="0.004"/>
+  <testcase name="checkThereExists" classname="modelChecker.ModelCheckerTest" time="0.088"/>
+  <testcase name="checkForAllAlwaysConstrain" classname="modelChecker.ModelCheckerTest" time="0.005"/>
+  <testcase name="checkUntil" classname="modelChecker.ModelCheckerTest" time="0.003"/>
+  <testcase name="checkForAllAlways" classname="modelChecker.ModelCheckerTest" time="0.004"/>
+  <testcase name="checkGetTrace" classname="modelChecker.ModelCheckerTest" time="0.006"/>
+  <testcase name="checkThereExistsConstrain" classname="modelChecker.ModelCheckerTest" time="0.004"/>
+  <testcase name="checkForAllEventiallyConstrain" classname="modelChecker.ModelCheckerTest" time="0.004"/>
+  <testcase name="checkNext" classname="modelChecker.ModelCheckerTest" time="0.003"/>
+  <testcase name="checkForAllEventially" classname="modelChecker.ModelCheckerTest" time="0.003"/>
+  <testcase name="checkUntilConstrain" classname="modelChecker.ModelCheckerTest" time="0.006"/>
+  <testcase name="checkNextConstrain" classname="modelChecker.ModelCheckerTest" time="0.005"/>
   <system-out><![CDATA[s0-[act1]-s1
+s0-[act2]-s2
+s1-[act3]-s0
+s2-[act4]-s1
+s1-[act5]-s3
+s3-[act6]-s3
+s0-[act1]-s1
+s0-[act2]-s2
+s1-[act3]-s0
+s2-[act4]-s1
+s1-[act5]-s3
+s3-[act6]-s3
+s0-[act1]-s1
+s0-[act2]-s2
+s1-[act3]-s0
+s2-[act4]-s1
+s1-[act5]-s3
+s3-[act6]-s3
+s0-[act1]-s1
+s0-[act2]-s2
+s1-[act3]-s0
+s2-[act4]-s1
+s1-[act5]-s3
+s3-[act6]-s3
+s0-[act1]-s1
+s0-[act2]-s2
+s1-[act3]-s0
+s2-[act4]-s1
+s1-[act5]-s3
+s3-[act6]-s3
+(AGa )
+true
+(EGa )
+true
+s0-[act1]-s1
+s0-[act2]-s2
+s1-[act3]-s0
+s2-[act4]-s1
+s1-[act5]-s3
+s3-[act6]-s3
+s0-[act1]-s1
+s0-[act2]-s2
+s1-[act3]-s0
+s2-[act4]-s1
+s1-[act5]-s3
+s3-[act6]-s3
+s0-[act1]-s1
 s0-[act2]-s2
 s1-[act3]-s0
 s2-[act4]-s1

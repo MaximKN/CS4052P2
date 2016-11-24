@@ -23,6 +23,8 @@ public class ThereExists extends StateFormula {
         buffer.append(")");
     }
 
+    private String trace = "";
+
     public boolean check (Model model) { 
         if(this.pathFormula instanceof Always || this.pathFormula instanceof Eventually || this.pathFormula instanceof Next){
             State[] states = model.getStates();
@@ -32,7 +34,8 @@ public class ThereExists extends StateFormula {
                     return true;
                 } 
             }
-
+            
+            trace = this.pathFormula.toString();
             return false;
         }
         else if(this.pathFormula instanceof Until){
@@ -42,5 +45,9 @@ public class ThereExists extends StateFormula {
         else{
             return false; 
         }
+    }
+    
+    public String getTrace(){
+        return trace;
     }
 }

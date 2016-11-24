@@ -23,6 +23,8 @@ public class Not extends StateFormula {
     }
 
     //************************************ New Code **************************
+    
+    private String trace = "";
 
     public boolean check (Model model) { 
        if(this.stateFormula instanceof ForAll || this.stateFormula instanceof ThereExists){
@@ -30,6 +32,7 @@ public class Not extends StateFormula {
             if (!this.stateFormula.check(model)){
                 return true;
             } else {
+                trace = this.stateFormula.toString();
                 return false;
             }
     
@@ -39,5 +42,10 @@ public class Not extends StateFormula {
         }
      
     }
+   
+    public String getTrace(){
+        return trace;
+    }
+
 
 }

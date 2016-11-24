@@ -25,6 +25,11 @@ public class Or extends StateFormula {
     }
 
 //************************************** New Code **********************************
+    private String trace = "";
+
+    public String getTrace(){
+        return trace;
+    }
 
     public boolean check (Model model) { 
     
@@ -34,11 +39,11 @@ public class Or extends StateFormula {
             this.left instanceof Not && this.right instanceof Not){
 
             if (!this.left.check(model) || !this.right.check(model)){
+                trace = this.left.toString() + " " + this.right.toString();
                 return false;
             } else {
                 return true;
             }
-    
         }
         else{
             return false; 

@@ -13,6 +13,10 @@ public class AtomicProp extends StateFormula {
     public boolean check(Model model){
         return true;
     }
+    
+    public String getTrace(){
+        return label;
+    }
 
     public boolean check(Model model, State s){
         return true;

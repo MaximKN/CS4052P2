@@ -10,6 +10,8 @@ public abstract class StateFormula {
     public abstract boolean check(Model model);
     public abstract boolean check(Model model, State s);
 
+    public abstract String getTrace();
+
     @Override
     public String toString() {
         StringBuilder buffer = new StringBuilder();
